@@ -8,10 +8,24 @@
     <title>osantoschris | {% block title %}início{% endblock title %}</title>
 </head>
 <body>
+
+    <div class="header">
+        <div id="nav-logo"></div>
+        <div id="btn-fechar"></div>
+    </div>
+
     {% block content %}
     <div class="main-container">
-        <div class="sub-container"></div>
+        <div class="sub-container">
+
+        </div>
     </div>
     {% endblock content %}
+
+    <div class="footer">
+        <div class="footer-header">
+            <img class="logo" src="{% static 'homepage/img/logo.png' %}" alt="" srcset="">            
+        </div>
+    </div>
 </body>
 </html>
