@@ -1,24 +1,90 @@
-<!doctype html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>CONSEGUI</title>
-
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-          crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+    <title>osantoschris | {% block title %}início{% endblock title %}</title>
 </head>
 <body>
-<main class="container">
-    <div class="row text-center justify-content-center">
-        <div class="col">
-            <h1 class="display-4">CONSEGUI PUBLICAR ESSA MERDA</h1>
+
+    <div class="header">
+        <div id="nav-logo">
+            <img src="{% static "homepage/img/logo.png" %}" alt="" srcset="">
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
     </div>
-</main>
+
+    <div class="dropdown-menu" id="dropdownMenu">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Products</li>
+            <li>Clients</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+
+    {% block content %}
+    
+    <div class="main-container">
+        <div class="sub-container">
+
+        </div>
+    
+        <div id="comments-area" class="sub-container">
+
+            <h3>Excelente!</h3>
+
+            <div class="coment-content">
+                <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+                <span>
+                    <h4>Joyce Ps</h4>
+                    <p>Arquiteta</p>
+                </span>
+            </div>
+
+        </div>
+
+        <div id="more-comments" class="sub-container">
+            <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+            <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+            <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+            <div class="plus-one">+1</div>
+        </div>
+
+    </div>
+    
+    {% endblock content %}
+
+    <div class="footer">
+
+        <div class="footer-header">
+
+            <div class="logo-footer">
+
+                
+                <img class="logo" src="{% static 'homepage/img/logo.png' %}" alt="" srcset="">
+                
+            </div>
+
+            <div class="social-footer">
+
+                <img src="{% static 'homepage/img/instagram.png' %}" alt="" srcset="">
+                <img src="{% static 'homepage/img/linkedin.png' %}" alt="" srcset="">
+                <img src="{% static 'homepage/img/whatsapp.png' %}" alt="" srcset="">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="{% static "homepage/js/script.js" %}"></script>
 </body>
 </html>
