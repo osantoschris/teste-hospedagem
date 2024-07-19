@@ -10,22 +10,66 @@
 <body>
 
     <div class="header">
-        <div id="nav-logo"></div>
-        <div id="btn-fechar"></div>
+        <div id="nav-logo">
+            <img src="{% static "homepage/img/logo.png" %}" alt="" srcset="">
+        </div>
+        
     </div>
 
     {% block content %}
+    
     <div class="main-container">
         <div class="sub-container">
 
         </div>
+    
+        <div id="comments-area" class="sub-container">
+
+            <h3>Excelente!</h3>
+
+            <div class="coment-content">
+                <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+                <span>
+                    <h4>Joyce Ps</h4>
+                    <p>Arquiteta</p>
+                </span>
+            </div>
+
+        </div>
+
+        <div id="more-comments" class="sub-container">
+            <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+            <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+            <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
+            <div class="plus-one">+1</div>
+        </div>
+
     </div>
+    
     {% endblock content %}
 
     <div class="footer">
+
         <div class="footer-header">
-            <img class="logo" src="{% static 'homepage/img/logo.png' %}" alt="" srcset="">            
+
+            <div class="logo-footer">
+
+                
+                <img class="logo" src="{% static 'homepage/img/logo.png' %}" alt="" srcset="">
+                
+            </div>
+
+            <div class="social-footer">
+
+                <img src="{% static 'homepage/img/instagram.png' %}" alt="" srcset="">
+                <img src="{% static 'homepage/img/linkedin.png' %}" alt="" srcset="">
+                <img src="{% static 'homepage/img/whatsapp.png' %}" alt="" srcset="">
+
+            </div>
+
         </div>
+
     </div>
+
 </body>
 </html>
