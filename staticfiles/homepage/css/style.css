@@ -33,24 +33,6 @@ body.no-scroll {
 
 /* Menu dropdown */
 .menu-icon {
-<<<<<<< HEAD
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    margin: 20px;
-}
-.menu-icon div {
-    width: 100%;
-    height: 4px;
-    background-color: #000000;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-.change .bar1 {
-    transform: rotate(-45deg) translate(-7px, 6px);
-=======
     width: 15px;
     height: 15px;
     cursor: pointer;
@@ -79,26 +61,11 @@ body.no-scroll {
 .change .bar1 {
     transform: rotate(-45deg);
     top: 4px;
->>>>>>> teste
 }
 .change .bar2 {
     opacity: 0;
 }
 .change .bar3 {
-<<<<<<< HEAD
-    transform: rotate(45deg) translate(-7px, -6px);
-}
-.dropdown-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-    transition: 0.5s;
-=======
     transform: rotate(45deg);
     top: 4px;
 }
@@ -118,16 +85,10 @@ body.no-scroll {
     z-index: 1;
     transition: 0.8s;
     margin-left: -390px;
->>>>>>> teste
 }
 .dropdown-menu.show {
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-}
-
-.dropdown-menu ul {
-=======
     width: 100%;
     transform: 0.5s;
     margin: 0;
@@ -138,7 +99,6 @@ body.no-scroll {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
->>>>>>> teste
     width: 100%;
     margin: 0;
     margin-top: 50px;
@@ -148,23 +108,6 @@ body.no-scroll {
 .dropdown-menu ul li {
     width: 90%;
     text-align: center;
-<<<<<<< HEAD
-    padding: 10px;
-    margin: 20px;
-    border: 1px solid #CCCCCC;
-    background-color: #CCCCCC;
-    border-radius: 5px;
-    list-style: none;
-    color: #FFFFFF;
-}
-.dropdown-menu ul li:hover {
-    background-color: #545454;
-    border: 1px solid #545454;
-    cursor: pointer;
-}
-
-
-=======
     padding: 5px;
     margin: 10px;
     border-radius: 5px;
@@ -186,7 +129,6 @@ body.no-scroll {
     text-decoration: none;
     color: #545454;
 }
->>>>>>> teste
 
 
 .main-container {
@@ -200,10 +142,6 @@ body.no-scroll {
     width: 70%;
     height: 3rem;
     background-color: rgb(0, 0, 0, 0.15);
-<<<<<<< HEAD
-    /* margin-top: 1rem; */
-=======
->>>>>>> teste
     margin: 1rem 0;
     border-radius: 0.5rem;
 }
@@ -286,8 +224,6 @@ body.no-scroll {
     margin: 0 0.4rem;
 }
 
-<<<<<<< HEAD
-=======
 
 
 @media (min-width: 801px) {
@@ -302,4 +238,3 @@ body.no-scroll {
         display: none;
     }
 }
->>>>>>> teste
