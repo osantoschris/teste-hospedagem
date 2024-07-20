@@ -17,4 +17,4 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
 app = get_wsgi_application()
 
-application = get_wsgi_application()
+# application = get_wsgi_application()
