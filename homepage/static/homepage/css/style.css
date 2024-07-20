@@ -33,46 +33,72 @@ body.no-scroll {
 
 /* Menu dropdown */
 .menu-icon {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
     position: relative;
     z-index: 2;
-    margin: 20px;
+    margin: 30px;
 }
 .menu-icon div {
+    display: block;
+    position: absolute;
     width: 100%;
-    height: 4px;
+    height: 2px;
     background-color: #000000;
-    margin: 6px 0;
-    transition: 0.4s;
+    /* margin: 2px 0; */
+    transition: 0.4s ease-in-out;
+}
+.menu-icon .bar1 {
+    top: 0;
+}
+.menu-icon .bar2 {
+    top: 4px;
+}
+.menu-icon .bar3 {
+    top: 8px;
 }
 .change .bar1 {
-    transform: rotate(-45deg) translate(-7px, 6px);
+    transform: rotate(-45deg);
+    top: 4px;
 }
 .change .bar2 {
     opacity: 0;
 }
 .change .bar3 {
-    transform: rotate(45deg) translate(-7px, -6px);
+    transform: rotate(45deg);
+    top: 4px;
+}
+
+.navbar {
+    display: none;
+
 }
 .dropdown-menu {
-    display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #FFFFFF;
     z-index: 1;
-    transition: 0.5s;
+    transition: 0.8s;
+    margin-left: -390px;
 }
 .dropdown-menu.show {
     display: flex;
     justify-content: center;
+    width: 100%;
+    transform: 0.5s;
+    margin: 0;
 }
 
 .dropdown-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
     margin: 0;
     margin-top: 50px;
@@ -82,21 +108,27 @@ body.no-scroll {
 .dropdown-menu ul li {
     width: 90%;
     text-align: center;
-    padding: 10px;
-    margin: 20px;
-    border: 1px solid #CCCCCC;
-    background-color: #CCCCCC;
+    padding: 5px;
+    margin: 10px;
     border-radius: 5px;
     list-style: none;
-    color: #FFFFFF;
+    color: #545454;
 }
-.dropdown-menu ul li:hover {
+.dropdown-menu ul li.active {
+    background-color: #F5F5F5;
+    border: 1px solid #F5F5F5;
+}
+.dropdown-menu.show > ul > li:hover {
     background-color: #545454;
     border: 1px solid #545454;
     cursor: pointer;
+    color: #FFFFFF;
 }
 
-
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: #545454;
+}
 
 
 .main-container {
@@ -110,7 +142,6 @@ body.no-scroll {
     width: 70%;
     height: 3rem;
     background-color: rgb(0, 0, 0, 0.15);
-    /* margin-top: 1rem; */
     margin: 1rem 0;
     border-radius: 0.5rem;
 }
@@ -193,3 +224,17 @@ body.no-scroll {
     margin: 0 0.4rem;
 }
 
+
+
+@media (min-width: 801px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        list-style: none;
+
+    }
+    .menu-icon {
+        display: none;
+    }
+}

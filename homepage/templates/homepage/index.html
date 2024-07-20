@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
-    <title>osantoschris | {% block title %}início{% endblock title %}</title>
+    <title>osantoschris | {% block title %}home{% endblock title %}</title>
 </head>
 <body>
 
@@ -13,21 +13,45 @@
         <div id="nav-logo">
             <img src="{% static "homepage/img/logo.png" %}" alt="" srcset="">
         </div>
+
+        {% comment %} Mobile menu {% endcomment %}
         <div class="menu-icon" id="menuIcon">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
+
+        {% comment %} Desktop menu {% endcomment %}
+        <div class="navbar">
+            <ul>
+                <li class="active"><a href="{% url "index" %}">Home</a></li>
+                <li><a href="{% url "about" %}">Quem Somos</a></li>
+                <li><a href="{% url "products-services" %}">Produtos/Serviços</a></li>
+            </ul>
+        </div>
+
     </div>
 
     <div class="dropdown-menu" id="dropdownMenu">
+
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Products</li>
-            <li>Clients</li>
-            <li>Contact</li>
+            <li class="active">
+                <a href="{% url "index" %}">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="{% url "about" %}">
+                    Quem Somos
+                </a>
+            </li>
+            <li>
+                <a href="{% url "products-services" %}">
+                    Produtos/Serviços
+                </a>
+            </li>
         </ul>
+
     </div>
 
     {% block content %}
