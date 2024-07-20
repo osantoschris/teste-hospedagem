@@ -24,9 +24,9 @@
         {% comment %} Desktop menu {% endcomment %}
         <div class="navbar">
             <ul>
-                <li class="active"><a href="{% url "index" %}">Home</a></li>
-                <li><a href="{% url "about" %}">Quem Somos</a></li>
-                <li><a href="{% url "products-services" %}">Produtos/Serviços</a></li>
+                <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url "index" %}">Home</a></li>
+                <li class="{% if request.path == '/about/' %}active{% endif %}"><a href="{% url "about" %}">Quem Somos</a></li>
+                <li class="{% if request.path == '/product-services/' %}active{% endif %}"><a href="{% url "products-services" %}">Produtos/Serviços</a></li>
             </ul>
         </div>
 
@@ -35,20 +35,26 @@
     <div class="dropdown-menu" id="dropdownMenu">
 
         <ul>
-            <li class="active">
+            <li class="{% if request.path == '/' %}active{% endif %}">
                 <a href="{% url "index" %}">
                     Home
                 </a>
             </li>
-            <li>
+            <li class="{% if request.path == '/about/' %}active{% endif %}">
                 <a href="{% url "about" %}">
                     Quem Somos
                 </a>
             </li>
-            <li>
+            <li class="{% if request.path == '/products-services/' %}active{% endif %}">
                 <a href="{% url "products-services" %}">
                     Produtos/Serviços
                 </a>
+            </li>
+            <li class="{% if request.path == '/clients/' %}active{% endif %}">
+                <a href="{% url "clients" %}">Nossos Clientes</a>
+            </li>
+            <li class="{% if request.path == '/contact/' %}active{% endif %}">
+                <a href="{% url "contact" %}">Contato</a>
             </li>
         </ul>
 
@@ -58,6 +64,18 @@
     
     <div class="main-container">
         <div class="sub-container">
+
+            <h1>Desenvolvimento e Hospedagem de Sites Profissionais</h1>
+            <h2>Transforme sua presença online com nossos serviços de desenvolvimento e hospedagem de sites</h2>
+            <p>Se você está procurando por uma solução completa para desenvolver e hospedar seu site, você está no lugar certo! Nós oferecemos serviços personalizados de criação de páginas institucionais e aplicativos web que atendam às suas necessidades específicas.</p>
+            <h2>Nossos Serviços</h2>
+            <ul>
+                <li>Criação de Páginas institucionais</li>
+                <li>Desenvolvimento de Aplicativos Web</li>
+                <li>Cartão de Visita Virtual</li>
+                <li>Hospedagem de Sites</li>
+            </ul>
+            <p>Visite agora mesmo nossa <a href="{% url "products-services" %}">seção de produtos</a> e veja como podemos te ajudar!</p>
 
         </div>
     
@@ -79,7 +97,7 @@
             <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
             <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
             <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
-            <div class="plus-one">+1</div>
+            <div class="plus-one"><a href="{% url "clients" %}">+1</a></div>
         </div>
 
     </div>
@@ -104,6 +122,10 @@
                 <img src="{% static 'homepage/img/whatsapp.png' %}" alt="" srcset="">
 
             </div>
+
+        </div>
+
+        <div class="footer-content">
 
         </div>
 

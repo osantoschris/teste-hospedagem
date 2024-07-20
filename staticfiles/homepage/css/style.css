@@ -237,4 +237,10 @@ body.no-scroll {
     .menu-icon {
         display: none;
     }
+    #more-comments {
+        display: none;
+    }
+    #comments-area {
+        display: none;
+    }
 }
