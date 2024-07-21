@@ -1,0 +1,52 @@
+body {
+    text-align: justify;
+}
+
+.navbar ul li {
+    display: flex;
+    width: 10rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    margin: 0 1rem;
+}
+
+.navbar ul {
+    display: flex;
+    width: 80%;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #545454;
+}
+.active {
+    border-radius: 5%;
+    background-color: #F5F5F5;
+    color: #FFFFFF;
+    padding: 0.5rem 0;
+}
+
+.title {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    padding-bottom: 0.5rem;
+    text-align: left;
+}
+
+.body-text {
+    padding: 0.5rem 0;
+}
+
+.default-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.3rem 0;
+}

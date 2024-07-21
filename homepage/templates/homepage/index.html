@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+    <link rel="stylesheet" href="{% static "homepage/css/index.css" %}">
     <title>osantoschris | {% block title %}home{% endblock title %}</title>
 </head>
 <body>
@@ -26,7 +27,13 @@
             <ul>
                 <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url "index" %}">Home</a></li>
                 <li class="{% if request.path == '/about/' %}active{% endif %}"><a href="{% url "about" %}">Quem Somos</a></li>
-                <li class="{% if request.path == '/product-services/' %}active{% endif %}"><a href="{% url "products-services" %}">Produtos/Serviços</a></li>
+                <li class="{% if request.path == '/products-services/' %}active{% endif %}"><a href="{% url "products-services" %}">Produtos/Serviços</a></li>
+                <li>
+                    <a class="{% if request.path == '/clients/' %}active{% endif %}" href="{% url "clients" %}">Nossos Clientes</a>
+                </li>
+                <li>
+                    <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url "contact" %}">Contato</a>
+                </li>    
             </ul>
         </div>
 
@@ -65,17 +72,17 @@
     <div class="main-container">
         <div class="sub-container">
 
-            <h1>Desenvolvimento e Hospedagem de Sites Profissionais</h1>
-            <h2>Transforme sua presença online com nossos serviços de desenvolvimento e hospedagem de sites</h2>
-            <p>Se você está procurando por uma solução completa para desenvolver e hospedar seu site, você está no lugar certo! Nós oferecemos serviços personalizados de criação de páginas institucionais e aplicativos web que atendam às suas necessidades específicas.</p>
+            <h1 class="title">Desenvolvimento e Hospedagem de Sites Profissionais</h1>
+            <h2 class="sub-title">Transforme sua presença online com nossos serviços de desenvolvimento e hospedagem de sites</h2>
+            <p class="body-text">Se você está procurando por uma solução completa para desenvolver e hospedar seu site, você está no lugar certo! Nós oferecemos serviços personalizados de criação de páginas institucionais e aplicativos web que atendam às suas necessidades específicas.</p>
             <h2>Nossos Serviços</h2>
-            <ul>
+            <ul class="default-list">
                 <li>Criação de Páginas institucionais</li>
                 <li>Desenvolvimento de Aplicativos Web</li>
                 <li>Cartão de Visita Virtual</li>
                 <li>Hospedagem de Sites</li>
             </ul>
-            <p>Visite agora mesmo nossa <a href="{% url "products-services" %}">seção de produtos</a> e veja como podemos te ajudar!</p>
+            <p class="body-text">Visite agora mesmo nossa <a href="{% url "products-services" %}">seção de produtos</a> e veja como podemos te ajudar!</p>
 
         </div>
     
