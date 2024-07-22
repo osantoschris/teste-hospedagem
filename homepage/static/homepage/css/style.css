@@ -1,3 +1,4 @@
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -11,11 +12,12 @@ body {
     align-items: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
+/* Desabilita rolagem para menu dropdown */
 body.no-scroll {
     overflow: hidden;
 }
 
+/* Cabeçalho */
 .header {
     width: 95%;
     height: 75px;
@@ -28,7 +30,10 @@ body.no-scroll {
 #nav-logo img {
     width: 2rem;
     height: 2rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
+}
+.navbar {
+    display: none;
 }
 
 /* Menu dropdown */
@@ -68,11 +73,6 @@ body.no-scroll {
     transform: rotate(45deg);
     top: 4px;
 }
-
-.navbar {
-    display: none;
-
-}
 .dropdown-menu {
     display: flex;
     position: fixed;
@@ -93,7 +93,6 @@ body.no-scroll {
     transform: 0.5s;
     margin: 0;
 }
-
 .dropdown-menu ul {
     display: flex;
     flex-direction: column;
@@ -124,12 +123,10 @@ body.no-scroll {
     cursor: pointer;
     color: #FFFFFF;
 }
-
 .dropdown-menu ul li a {
     text-decoration: none;
     color: #545454;
 }
-
 
 /* Conteudo */
 .main-container {
@@ -144,9 +141,10 @@ body.no-scroll {
     width: 70%;
     height: auto;
     margin: 1rem 0;
-    /* background-color: rgb(0, 0, 0, 0.15);
-    border-radius: 0.5rem; */
 }
+
+/* Area de comentários */
+/* mobile */
 #comments-area {
     height: 150px;
     background-color: #FFFFFF;
@@ -191,7 +189,6 @@ body.no-scroll {
 #more-comments img:first-child {
     margin-left: 0;
 }
-
 .plus-one {
     margin-left: 1rem;
     padding: 0.5rem;
@@ -207,7 +204,29 @@ body.no-scroll {
     color: #545454;
 }
 
+/* Desktop */
+#clients-avaliation {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 0;
+    row-gap: 0;
+    width: 70%;
+    height: 150px;
+    border: 1px solid red;
+}
 
+.grid1 {grid-area: 1/1/2/2;}
+.grid2 {grid-area: 1/2/2/3;}
+.grid3 {grid-area: 1/3/2/4;}
+.grid4 {grid-area: 1/4/2/5;}
+
+#clients-avaliation > div {
+    width: 10px;
+}
+
+/* Rodapé */
+/* mobile */
 .footer {
     width: 100%;
     height: 300px;
@@ -230,10 +249,13 @@ body.no-scroll {
     height: 2rem;
     margin: 0 0.4rem;
 }
+.social-footer img:hover {
+    cursor: pointer;
+}
 
 
 
-@media (min-width: 801px) {
+@media (min-width: 1024px) {
     .header {
         width: 70%;
     }
@@ -246,24 +268,20 @@ body.no-scroll {
 
     .navbar {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
         text-decoration: none;
         list-style: none;
 
     }
-    .menu-icon {
-        display: none;
+    .navbar a {
+        padding: 0 1rem;
+        margin: 0 0.5rem;
     }
-    #more-comments {
-        display: none;
-    }
+
+
+    .menu-icon,
+    #more-comments,
     #comments-area {
         display: none;
-    }
-}
-
-@media (min-width: 768px) {
-    .dropdown-menu.show {
-        width: 70%;
     }
 }
