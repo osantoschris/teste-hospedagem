@@ -213,6 +213,7 @@ body.no-scroll {
     row-gap: 0;
     width: 70%;
     height: 150px;
+    margin-bottom: 100px;
 }
 .grid1 {
     grid-area: 1/1/2/2;
@@ -325,6 +326,7 @@ body.no-scroll {
     }
     .main-container {
         width: 70%;
+        min-height: auto;
     }
 
     .navbar {
@@ -341,6 +343,10 @@ body.no-scroll {
 
     #clients-avaliation {
         display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .grid4 {
+        display: none;
     }
 
     .menu-icon,
@@ -358,5 +364,11 @@ body.no-scroll {
 @media (min-width: 1440px) {
     .footer-content {
         grid-template-columns: repeat(3, 1fr);
+    }
+    #clients-avaliation {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .grid4 {
+        display: flex;
     }
 }

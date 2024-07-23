@@ -2,30 +2,23 @@
 
 {% block title %}contato{% endblock title %}
 
-{% block content %}
-<div class="main-container">
-    <div class="sub-conteiner">
-        
-        <form method="post">
-            {% csrf_token %}
-            <div>
-                <label for="name">Nome: </label>
-                <input type="text" name="nome" id="nome">
-            </div>
-            <br>
-            <div>
-                <label for="email">Email: </label>
-                <input type="email" name="email" id="email">
-            </div>
-            <br>
-            <div>
-                <label for="msg">Mensagem: </label>
-                <textarea name="msg" id="msg"></textarea>
-            </div>
-            <button type="submit">Enviar</button>
-            <br>
-        </form>
+{% block extra_css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "homepage/css/contact.css" %}">
+{% endblock extra_css %}
 
+{% block content %}
+
+<div class="main-container" id="form-container">
+    <div class="sub-container" id="form-contact">
+        <p>outro conteudo</p>
+        <p>mais um conteudo</p>
+        <form autocomplete="off" method="post" class="contact-form">
+            <h4>Entre em contato</h4>
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn success">Enviar</button>
+        </form>
     </div>
 </div>
 

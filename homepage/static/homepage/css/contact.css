@@ -1,0 +1,12 @@
+#form-contact {
+    width: 95%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#form-contact > form {
+    border: 1px solid #545454;
+    border-radius: 1rem;
+    padding: 1rem;
+}

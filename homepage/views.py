@@ -1,10 +1,18 @@
-from django.shortcuts import render
-from django.conf import settings
-from django.core.mail import EmailMessage
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
+from .forms import ContactMeForm
 
-import smtplib
-import email.message
+from django.conf import settings
+from django.template.loader import get_template
+from django.core.mail import EmailMessage, send_mail
+
+def send_contact_email(data):
+    message_body = get_template('homepage/send.html').render(data)
+    email = EmailMessage(data['subject'], 
+                         message_body,
+                         settings.DEFAULT_FROM_EMAIL, 
+                         to=['christian.santos9@gmail.com'])
+    email.content_subtype = 'html'
+    return email.send()
 
 # Create your views here.
 def index(request):
@@ -24,26 +32,21 @@ def clients(request):
 
 def send_email(request):
     if request.method == 'POST':
-        nome = request.POST.get("nome")
-        mensagem = request.POST.get("msg")
-        destinatario = request.POST.get("email")
+        form = ContactMeForm(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.save()
 
-        # Configuração do email
-        email_msg = email.message.EmailMessage()
-        email_msg['Subject'] = f'Email de {nome}'
-        email_msg['From'] = settings.EMAIL_HOST_USER
-        email_msg['To'] = destinatario
-        email_msg.set_content(mensagem, subtype='html')
+            email = {
+                'name': request.POST.get('name'),
+                'email': request.POST.get('email'),
+                'subject': request.POST.get('subject'),
+                'message': request.POST.get('message'),
+            }
 
-        # Conectar ao servidor SMTP
-        try:
-            with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-                smtp.starttls()
-                smtp.login(settings.EMAIL_HOST_USER, settings.EMAIL_HOST_PASSWORD)
-                smtp.send_message(email_msg)
-        except Exception as e:
-            return HttpResponse(f'Erro ao enviar email: {e}')
+            send_contact_email(email)
+            return redirect('contact')
+    else:
+        form = ContactMeForm()
 
-        return HttpResponse('E-mail enviado com sucesso!')
-
-    return render(request, 'homepage/contact.html')
+    return render(request, 'homepage/contact.html', {'form': form})
