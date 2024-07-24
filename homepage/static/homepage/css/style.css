@@ -117,12 +117,10 @@ body.no-scroll {
     background-color: #F5F5F5;
     border: 1px solid #F5F5F5;
 }
-.dropdown-menu.show > ul > li:hover {
-    background-color: #545454;
+ .dropdown-menu.show > ul > li:hover {
     border: 1px solid #545454;
     cursor: pointer;
-    color: #FFFFFF;
-}
+ }
 .dropdown-menu ul li a {
     text-decoration: none;
     color: #545454;

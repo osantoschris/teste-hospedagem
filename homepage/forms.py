@@ -5,7 +5,7 @@ class ContactMeForm(forms.ModelForm):
 
     class Meta:
         model = ContactMe
-        fields = ['name', 'email', 'message', 'subject']
+        fields = ['name', 'email', 'message']
 
     def __init__(self, *args, **kargs):
         super().__init__(*args, *kargs)

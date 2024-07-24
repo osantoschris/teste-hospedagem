@@ -11,13 +11,11 @@
 
 <div class="main-container" id="form-container">
     <div class="sub-container" id="form-contact">
-        <p>outro conteudo</p>
-        <p>mais um conteudo</p>
+        <h4 class="form-title">Entre em contato</h4>
         <form autocomplete="off" method="post" class="contact-form">
-            <h4>Entre em contato</h4>
             {% csrf_token %}
             {{ form }}
-            <button type="submit" class="btn btn success">Enviar</button>
+            <button type="submit" class="btn-submit">Enviar</button>
         </form>
     </div>
 </div>

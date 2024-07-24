@@ -10,7 +10,7 @@ def send_contact_email(data):
     email = EmailMessage(data['subject'], 
                          message_body,
                          settings.DEFAULT_FROM_EMAIL, 
-                         to=['christian.santos9@gmail.com'])
+                         to=['christianoliveira8@outlook.com'])
     email.content_subtype = 'html'
     return email.send()
 
@@ -40,7 +40,7 @@ def send_email(request):
             email = {
                 'name': request.POST.get('name'),
                 'email': request.POST.get('email'),
-                'subject': request.POST.get('subject'),
+                'subject': f'Email de {request.POST.get("name")} - {request.POST.get("email")}',
                 'message': request.POST.get('message'),
             }
 

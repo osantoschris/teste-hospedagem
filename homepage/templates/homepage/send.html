@@ -1,12 +1,15 @@
-{% extends "homepage/index.html" %}
+<html>
+<body>
+    
+    {% block content %}
 
-{% block content %}
-    <h1>Envio de formulário de email</h1>
-    <p> {{ name }} </p>
-    <p> {{ email }} </p>
-    <p> {{ subject }} </p>
-    <p> {{ message }} </p>
+        <h1>Envio de formulário de email</h1>
+        <p> {{ name }} </p>
+        <p> {{ email }} </p>
+        <p> {{ subject }} </p>
+        <p> {{ message }} </p>
+    
+    {% endblock content %}
 
-{% endblock content %}
-
-
+</body>
+</html>
