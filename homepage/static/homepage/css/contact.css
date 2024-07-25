@@ -1,9 +1,14 @@
-#form-contact {
+.container__division-contact {
     width: 95%;
     height: auto;
     display: grid;
     grid-template-columns: 1fr;
 }
+.container__division-form-title {
+    font-size: 2rem;
+    padding-bottom: 5rem;
+}
+
 
 .contact-form {
     border: 1px solid #545454;
@@ -14,9 +19,7 @@
     align-items: center;
     justify-content: center;
 }
-.contact-form > div {
-    padding: 10px;
-}
+
 .btn-submit {
     width: 95%;
     height: 2rem;

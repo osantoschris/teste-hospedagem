@@ -9,15 +9,36 @@
 
 {% block content %}
 
-<div class="main-container" id="form-container">
-    <div class="sub-container" id="form-contact">
-        <h4 class="form-title">Entre em contato</h4>
+<div class="container">
+
+    {% comment %} <div class="container__division-contact" id="form-contact">
+
+        <h4 class="container__division-form-title">Entre em contato</h4>
+
         <form autocomplete="off" method="post" class="contact-form">
             {% csrf_token %}
             {{ form }}
-            <button type="submit" class="btn-submit">Enviar</button>
+            <button type="submit" class="btn-submit" id="btnSubmit">Enviar</button>
+        </form>
+
+    </div> {% endcomment %}
+
+    <div class="container__division-contact" id="form-contact">
+        <form autocomplete="off" method="post" class="contact-form">
+            {% csrf_token %}
+            <label for="id_name">Nome:</label>
+            <input type="text" name="name" id="input_name">
+            
+            <label for="id_email">Email:</label>
+            <input type="email" name="email" id="input_email">
+
+            <label for="message">Mensagem:</label>
+            <textarea name="message" id="input_message"></textarea>
+
+            <button type="submit" class="btn-submit" id="btnSubmit"></button>
         </form>
     </div>
+
 </div>
 
 {% endblock content %}

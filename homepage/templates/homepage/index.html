@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
+    <link rel="stylesheet" href="{% static "homepage/css/global.css" %}">
     <link rel="stylesheet" href="{% static "homepage/css/index.css" %}">
     <title>osantoschris | {% block title %}home{% endblock title %}</title>
     {% block extra_css %}{% endblock extra_css %}
@@ -12,14 +12,14 @@
 <body>
 
     <div class="header">
-        <div id="nav-logo">
+        <div class="header__logo">
             <a href="{% url "index" %}">
                 <img src="{% static "homepage/img/logo.png" %}" alt="" srcset="">
             </a>
         </div>
 
         {% comment %} Mobile menu {% endcomment %}
-        <div class="menu-icon" id="menuIcon">
+        <div class="header__menu-icon" id="menuIcon">
             <div class="bar1"></div>
             <div class="bar2"></div>
             <div class="bar3"></div>
@@ -27,11 +27,11 @@
 
         {% comment %} Desktop menu {% endcomment %}
         <div class="navbar">
-            <a class="{% if request.path == '/' %}active{% endif %}" href="{% url "index" %}">Home</a>
-            <a class="{% if request.path == '/about/' %}active{% endif %}" href="{% url "about" %}">Quem Somos</a>
-            <a class="{% if request.path == '/products-services/' %}active{% endif %}" href="{% url "products-services" %}">Produtos/Serviços</a>
-            <a class="{% if request.path == '/clients/' %}active{% endif %}" href="{% url "clients" %}">Clientes</a>
-            <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url "contact" %}">Contato</a>
+            <a class="navbar__link {% if request.path == '/' %}--active{% endif %}" href="{% url "index" %}">Home</a>
+            <a class="navbar__link {% if request.path == '/about/' %}--active{% endif %}" href="{% url "about" %}">Quem Somos</a>
+            <a class="navbar__link {% if request.path == '/products-services/' %}--active{% endif %}" href="{% url "products-services" %}">Produtos/Serviços</a>
+            <a class="navbar__link {% if request.path == '/clients/' %}--active{% endif %}" href="{% url "clients" %}">Nossos Clientes</a>
+            <a class="navbar__link {% if request.path == '/contact/' %}--active{% endif %}" href="{% url "contact" %}">Contato</a>
         </div>
 
     </div>
@@ -39,25 +39,25 @@
     <div class="dropdown-menu" id="dropdownMenu">
 
         <ul>
-            <li class="{% if request.path == '/' %}active{% endif %}">
+            <li class="{% if request.path == '/' %}--active-dropdown{% endif %}">
                 <a href="{% url "index" %}">
                     Home
                 </a>
             </li>
-            <li class="{% if request.path == '/about/' %}active{% endif %}">
+            <li class="{% if request.path == '/about/' %}--active-dropdown{% endif %}">
                 <a href="{% url "about" %}">
                     Quem Somos
                 </a>
             </li>
-            <li class="{% if request.path == '/products-services/' %}active{% endif %}">
+            <li class="{% if request.path == '/products-services/' %}--active-dropdown{% endif %}">
                 <a href="{% url "products-services" %}">
                     Produtos/Serviços
                 </a>
             </li>
-            <li class="{% if request.path == '/clients/' %}active{% endif %}">
+            <li class="{% if request.path == '/clients/' %}--active-dropdown{% endif %}">
                 <a href="{% url "clients" %}">Nossos Clientes</a>
             </li>
-            <li class="{% if request.path == '/contact/' %}active{% endif %}">
+            <li class="{% if request.path == '/contact/' %}--active-dropdown{% endif %}">
                 <a href="{% url "contact" %}">Contato</a>
             </li>
         </ul>
@@ -66,20 +66,20 @@
 
     {% block content %}
     
-    <div class="main-container">
+    <div class="container">
 
-        <div id="initialWellcome" class="sub-container">
+        <div id="initialWellcome" class="container__division">
             <p>Seja bem vindo(a)!</p>
         </div>
 
-        <div class="sub-container">
+        <div class="container__division">
 
             {% comment %} <h1 class="title">Desenvolvimento e Hospedagem de Sites Profissionais</h1>
             <h2 class="sub-title">Transforme sua presença online com nossos serviços de desenvolvimento e hospedagem de sites</h2> {% endcomment %}
-            <p class="body-text">Se você está procurando por uma solução completa para desenvolver e hospedar seu site, você está no lugar certo! Nós oferecemos serviços personalizados de criação de páginas institucionais e aplicativos web que atendam às suas necessidades específicas.</p>
-            <p id="body-text">Transforme a sua presença online com nossos serviços de desenvolvimento e hospedagem.</p>
-            <h2 class="sub-title">Nossos Serviços</h2>
-            <ul class="default-list">
+            <p class="--body-text">Se você está procurando por uma solução completa para desenvolver e hospedar seu site, você está no lugar certo! Nós oferecemos serviços personalizados de criação de páginas institucionais e aplicativos web que atendam às suas necessidades específicas.</p>
+            <p class="--body-text">Transforme a sua presença online com nossos serviços de desenvolvimento e hospedagem.</p>
+            <h2 class="--sub-title">Nossos Serviços</h2>
+            <ul class="--default-list">
                 <li>Criação de Páginas institucionais</li>
                 <li>Desenvolvimento de Aplicativos Web</li>
                 <li>Cartão de Visita Virtual</li>
@@ -88,11 +88,11 @@
 
         </div>
     
-        <div id="comments-area" class="sub-container">
+        <div id="comments-area" class="container__division">
 
             <h3>Excelente!</h3>
 
-            <div class="coment-content">
+            <div class="container__division-comment">
                 <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
                 <span>
                     <h4>Joyce Ps</h4>
@@ -102,89 +102,89 @@
 
         </div>
 
-        <div id="more-comments" class="sub-container">
+        <div id="more-comments" class="container__division">
             <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
             <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
             <img src="{% static "homepage/img/persona.jpeg" %}" alt="" srcset="">
-            <div class="plus-one"><a href="{% url "clients" %}">+1</a></div>
+            <div class="container__division-plusone"><a href="{% url "clients" %}">+1</a></div>
         </div>
 
-        <div id="clients-avaliation" class="sub-container">
-            <div class="grid1">
-                <div class="stars">
+        <div id="clients-avaliation" class="container__division">
+            <div id="grid1" class="container__division-grid">
+                <div class="container__division-star">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                 </div>
-                <div class="review-title">
+                <div class="container__division-review-title">
                     <h3>Excelente!</h3>
                     <p>Ótimo atendimento e...</p>
                 </div>
-                <div class="review-info">
+                <div class="container__division-review-info">
                     <img src="{% static "homepage/img/persona.jpeg" %}" alt="">
-                    <div class="review-name">
+                    <div class="container__division-review-name">
                         <h4>Joyce Ps</h4>
                         <p>Arquiteta</p>
                     </div>
                 </div>
             </div>
-            <div class="grid2">
-                <div class="stars">
+            <div id="grid2" class="container__division-grid">
+                <div class="container__division-star">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                 </div>
-                <div class="review-title">
+                <div class="container__division-review-title">
                     <h3>Excelente!</h3>
                     <p>Ótimo atendimento e...</p>
                 </div>
-                <div class="review-info">
+                <div class="container__division-review-info">
                     <img src="{% static "homepage/img/persona.jpeg" %}" alt="">
-                    <div class="review-name">
+                    <div class="container__division-review-name">
                         <h4>Joyce Ps</h4>
                         <p>Arquiteta</p>
                     </div>
                 </div>
             </div>
-            <div class="grid3">
-                <div class="stars">
+            <div id="grid3" class="container__division-grid">
+                <div class="container__division-star">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                 </div>
-                <div class="review-title">
+                <div class="container__division-review-title">
                     <h3>Excelente!</h3>
                     <p>Ótimo atendimento e...</p>
                 </div>
-                <div class="review-info">
+                <div class="container__division-review-info">
                     <img src="{% static "homepage/img/persona.jpeg" %}" alt="">
-                    <div class="review-name">
+                    <div class="container__division-review-name">
                         <h4>Joyce Ps</h4>
                         <p>Arquiteta</p>
                     </div>
                 </div>
             </div>
-            <div class="grid4">
-                <div class="stars">
+            <div id="grid4" class="container__division-grid">
+                <div class="container__division-star">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                     <img src="{% static "homepage/img/star_ico.png" %}" alt="">
                 </div>
-                <div class="review-title">
+                <div class="container__division-review-title">
                     <h3>Excelente!</h3>
                     <p>Ótimo atendimento e...</p>
                 </div>
-                <div class="review-info">
+                <div class="container__division-review-info">
                     <img src="{% static "homepage/img/persona.jpeg" %}" alt="">
-                    <div class="review-name">
+                    <div class="container__division-review-name">
                         <h4>Joyce Ps</h4>
                         <p>Arquiteta</p>
                     </div>
@@ -198,15 +198,15 @@
 
     <div class="footer">
 
-        <div class="footer-header">
+        <div class="footer__header">
 
-            <div class="logo-footer">
+            <div class="footer__header-logo">
                 <a href="{% url "index" %}">
                     <img class="logo" src="{% static 'homepage/img/logo.png' %}" alt="" srcset="">
                 </a>
             </div>
 
-            <div class="social-footer">
+            <div class="footer__header-social">
 
                 <img src="{% static 'homepage/img/instagram.png' %}" alt="" srcset="">
                 <img src="{% static 'homepage/img/linkedin.png' %}" alt="" srcset="">
@@ -216,24 +216,24 @@
 
         </div>
 
-        <div class="footer-content">
-            <div class="footer-division">
+        <div class="footer__content">
+            <div class="footer__content-division">
                 <h3>QUEM SOMOS</h3>
                 <a href="{% url "about" %}">Nossa História</a>
                 <a href="{% url "clients" %}">Nossos Clientes</a>
             </div>
-            <div class="footer-division">
+            <div class="footer__content-division">
                 <h3>PRODUTOS E SERVIÇOS</h3>
                 <a href="{% url "products-services" %}">Nossos Serviços</a>
             </div>
-            <div class="footer-division">
+            <div class="footer__content-division">
                 <h3>AJUDA</h3>
                 <a href="{% url "contact" %}">Entre em Contato</a>
 
             </div>
         </div>
 
-        <div class="footer-information">
+        <div class="footer__information">
             <p>&copy;2024 - Todos os direitos reservados. Este site não armazena cookies. As informações enviadas via formulário de contato serão tratadas conforme o regimento da LGPD - Lei Geral de Proteção de Dados vigente.</p>
         </div>
 
