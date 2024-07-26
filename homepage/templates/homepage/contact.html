@@ -11,7 +11,7 @@
 
 <div class="container">
 
-    {% comment %} <div class="container__division-contact" id="form-contact">
+    <div class="container__division-contact" id="form-contact">
 
         <h4 class="container__division-form-title">Entre em contato</h4>
 
@@ -21,9 +21,9 @@
             <button type="submit" class="btn-submit" id="btnSubmit">Enviar</button>
         </form>
 
-    </div> {% endcomment %}
+    </div>
 
-    <div class="container__division-contact" id="form-contact">
+    {% comment %} <div class="container__division-contact" id="form-contact">
         <form autocomplete="off" method="post" class="contact-form">
             {% csrf_token %}
             <label for="id_name">Nome:</label>
@@ -37,7 +37,7 @@
 
             <button type="submit" class="btn-submit" id="btnSubmit"></button>
         </form>
-    </div>
+    </div> {% endcomment %}
 
 </div>
 

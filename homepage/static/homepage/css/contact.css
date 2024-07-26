@@ -56,3 +56,10 @@
     border-radius: 0.5rem;
     margin: 10px 0;
 }
+
+label[for="id_subject"] {
+    display: none;
+}
+#id_subject {
+    display: none;
+}
