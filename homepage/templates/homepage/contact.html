@@ -26,17 +26,17 @@
             <form autocomplete="off" method="post" class="contact-form" id="formContact">
                 {% csrf_token %}
                 <span class="contact-form__span">
-                    <label for="id_name">Nome:</label>
+                    <label for="label_name">Nome:</label>
                     <input type="text" name="name" id="input_name" class="contact-form__input" placeholder="nome">
                 </span>
                 
                 <span class="contact-form__span">
-                    <label for="id_email">Email:</label>
+                    <label for="label_email">Email:</label>
                     <input type="email" name="email" id="input_email" class="contact-form__input" placeholder="nome@dominio.com.br">
                 </span>
                 
                 <span class="contact-form__span">
-                    <label for="message">Mensagem:</label>
+                    <label for="label_message">Mensagem:</label>
                     <textarea name="message" id="input_message" placeholder="Escreva sua mensagem aqui..." class="contact-form__input"></textarea>
                 </span>
                 
