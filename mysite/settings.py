@@ -16,8 +16,6 @@ from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -120,10 +118,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+BASE_DIR_STATIC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR_STATIC, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR_STATIC, 'homepage\static')
 ]
 
 # Default primary key field type
@@ -133,12 +133,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # # Send Email
 DEFAULT_FROM_EMAIL = config('EMAIL_HOST_USER')
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = int(config('EMAIL_PORT'))
 EMAIL_USE_TSL = bool(config('EMAIL_USE_TSL'))
 EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_TIMEOUT = int(config('EMAIL_TIMEOUT'))
-
-# 
+EMAIL_TIMEOUT = int(config('EMAIL_TIMEOUT')) 
