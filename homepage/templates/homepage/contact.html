@@ -1,9 +1,9 @@
 {% extends "homepage/index.html" %}
+{% load static %}
 
 {% block title %}contato{% endblock title %}
 
 {% block extra_css %}
-    {% load static %}
     <link rel="stylesheet" href="{% static "homepage/css/contact.css" %}">
 {% endblock extra_css %}
 
@@ -26,17 +26,17 @@
             <form autocomplete="off" method="post" class="contact-form" id="formContact">
                 {% csrf_token %}
                 <span class="contact-form__span">
-                    <label for="id_name">Nome:</label>
+                    <label for="input_name">Nome:</label>
                     <input type="text" name="name" id="input_name" class="contact-form__input" placeholder="nome">
                 </span>
                 
                 <span class="contact-form__span">
-                    <label for="id_email">Email:</label>
+                    <label for="input_email">Email:</label>
                     <input type="email" name="email" id="input_email" class="contact-form__input" placeholder="nome@dominio.com.br">
                 </span>
                 
                 <span class="contact-form__span">
-                    <label for="message">Mensagem:</label>
+                    <label for="input_message">Mensagem:</label>
                     <textarea name="message" id="input_message" placeholder="Escreva sua mensagem aqui..." class="contact-form__input"></textarea>
                 </span>
                 
