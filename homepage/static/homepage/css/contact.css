@@ -8,7 +8,7 @@
 
 .container__division-message {
     display: none;
-    
+
 }
 .container__division-contact {
     width: 95%;
@@ -76,7 +76,7 @@
 @media (min-width: 1024px) {
     .container__division-contact {
         width: 50%;
-        border: 1px solid red;
+        margin-bottom: 1rem;
     }
     .container__division-form-title {
         margin-left: 3rem;
