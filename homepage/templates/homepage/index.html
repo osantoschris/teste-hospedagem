@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static "homepage/css/global.css" %}">
     <title>osantoschris | {% block title %}home{% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static "homepage/img/favicon.png" %}" type="image/x-icon">
     {% block extra_css %}
         <link rel="stylesheet" href="{% static "homepage/css/index.css" %}">
     {% endblock extra_css %}
@@ -209,9 +210,15 @@
 
             <div class="footer__header-social">
 
-                <img src="{% static 'homepage/img/instagram.png' %}" alt="" srcset="">
-                <img src="{% static 'homepage/img/linkedin.png' %}" alt="" srcset="">
-                <img src="{% static 'homepage/img/whatsapp.png' %}" alt="" srcset="">
+                <a href="https://www.instagram.com/osantoschris_/" target="_blank">
+                    <img src="{% static 'homepage/img/instagram.png' %}" alt="" srcset="">
+                </a>
+                <a href="https://www.linkedin.com/in/christianoliveira8/" target="_blank">
+                    <img src="{% static 'homepage/img/linkedin.png' %}" alt="" srcset="">
+                </a>
+                <a href="https://wa.me/5562995003886?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank">
+                    <img src="{% static 'homepage/img/whatsapp.png' %}" alt="" srcset="">
+                </a>
 
             </div>
 

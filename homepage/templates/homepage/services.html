@@ -1,13 +1,21 @@
 {% extends "homepage/index.html" %}
-
+{% load static %}
 {% block title %}produtos e serviços{% endblock title %}
 
 {% block content %}
 
-<div class="main-container">
-    <div class="sub-container">
-        página de produtos
+<div class="container">
+
+    <div class="container__division">
+        <h2>Em manutenção...</h2>
+        <p>Olá, está página está em manutenção. Logo logo teremos novidades por aqui.</p>
+        <p>Por enquanto, que tal navegar pelo nosso site e descobrir um pouco mais sobre nós?</p>
+        <p>Você será redirecionado para a página inicial em <span id="countdown">10</span> segundos.</p>
     </div>
 </div>
 
+<script>
+    var redirectUrl = "{{ redirect_url }}"
+</script>
+<script src="{% static "homepage/js/countdown.js" %}"></script>
 {% endblock content %}

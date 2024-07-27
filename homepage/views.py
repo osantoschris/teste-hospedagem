@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-
+from django.urls import reverse
 from django.conf import settings
 from django.template.loader import get_template
 from django.core.mail import EmailMessage, send_mail
@@ -53,13 +53,22 @@ def index(request):
     return render(request, 'homepage/index.html', {})
 
 def about(request):
-    return render(request, 'homepage/about.html', {})
+    context = {
+        'redirect_url': reverse('index')
+    }
+    return render(request, 'homepage/about.html', context)
 
 def products(request):
-    return render(request, 'homepage/services.html', {})
+    context = {
+        'redirect_url': reverse('index')
+    }
+    return render(request, 'homepage/services.html', context)
 
 def contact(request):
     return render(request, 'homepage/contact.html', {})
 
 def clients(request):
-    return render(request, 'homepage/clients.html', {})
+    context = {
+        'redirect_url': reverse('index')
+    }
+    return render(request, 'homepage/clients.html', context)
