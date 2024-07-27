@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect, HttpResponse
-from .forms import ContactMeForm
+from django.shortcuts import render, HttpResponse
 
 from django.conf import settings
 from django.template.loader import get_template
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, send_mail
 
 def send_contact_email(data):
     message_body = get_template('homepage/send.html').render(data)
@@ -13,6 +12,26 @@ def send_contact_email(data):
                          to=['christianoliveira8@outlook.com'])
     email.content_subtype = 'html'
     return email.send()
+
+# def send_email_view(request):
+
+#     if request.method == 'POST':
+#         subject = f"Mensagem de: {request.POST.get('name')}"
+#         name = request.POST.get('name')
+#         email = request.POST.get('email')
+#         message = request.POST.get('message')
+#         from_email = settings.DEFAULT_FROM_EMAIL
+#         recipient_list = ['christianoliveira8@outlook.com']
+#         data = {'name': name, 'email': email, 'message': message}
+#         message_body = get_template('homepage/send.html').render(data)
+#         print(message_body)
+#         try:
+#             send_mail(subject, message_body, from_email, recipient_list, fail_silently=False)
+#             return render(request, 'homepage/contact.html')
+#         except Exception as e:
+#             return HttpResponse(f'Error: {e}', status=500)
+        
+#     return render(request, 'homepage/contact.html') 
 
 # Create your views here.
 def index(request):
