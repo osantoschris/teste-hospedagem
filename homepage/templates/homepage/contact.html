@@ -11,34 +11,45 @@
 
 <div class="container">
 
+    <div class="container__division-message">
+        mensagem para mostrar quando a tela for maior
+    </div>
+
     <div class="container__division-contact" id="form-contact">
 
-        <h4 class="container__division-form-title">Entre em contato</h4>
+        <span class="container__division-form-title">
+            <h2>Entre em contato</h2>
+        </span>
 
-        <form autocomplete="off" method="post" class="contact-form">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit" class="btn-submit" id="btnSubmit">Enviar</button>
-        </form>
+        <span class="container__division-contact-form">
+
+            <form autocomplete="off" method="post" class="contact-form" id="formContact">
+                {% csrf_token %}
+                <span class="contact-form__span">
+                    <label for="id_name">Nome:</label>
+                    <input type="text" name="name" id="input_name" class="contact-form__input" placeholder="nome">
+                </span>
+                
+                <span class="contact-form__span">
+                    <label for="id_email">Email:</label>
+                    <input type="email" name="email" id="input_email" class="contact-form__input" placeholder="nome@dominio.com.br">
+                </span>
+                
+                <span class="contact-form__span">
+                    <label for="message">Mensagem:</label>
+                    <textarea name="message" id="input_message" placeholder="Escreva sua mensagem aqui..." class="contact-form__input"></textarea>
+                </span>
+                
+                
+                <button type="submit" class="btn-submit" id="btnSubmit">Enviar</button>
+            </form>
+
+        </span>
 
     </div>
 
-    {% comment %} <div class="container__division-contact" id="form-contact">
-        <form autocomplete="off" method="post" class="contact-form">
-            {% csrf_token %}
-            <label for="id_name">Nome:</label>
-            <input type="text" name="name" id="input_name">
-            
-            <label for="id_email">Email:</label>
-            <input type="email" name="email" id="input_email">
-
-            <label for="message">Mensagem:</label>
-            <textarea name="message" id="input_message"></textarea>
-
-            <button type="submit" class="btn-submit" id="btnSubmit"></button>
-        </form>
-    </div> {% endcomment %}
-
 </div>
+
+<script src="{% static "homepage/js/form_validation.js" %}"></script>
 
 {% endblock content %}

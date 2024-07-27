@@ -1,27 +1,65 @@
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container__division-message {
+    display: none;
+    
+}
 .container__division-contact {
     width: 95%;
     height: auto;
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .container__division-form-title {
-    font-size: 2rem;
+    width: 100%;
+    font-size: 1.3rem;
     padding-bottom: 5rem;
 }
-
-
+.container__division-contact-form {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .contact-form {
     border: 1px solid #545454;
     border-radius: 1rem;
     padding: 1rem;
     display: flex;
+    width: 95%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.contact-form__span {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+}
 
+.contact-form__input {
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    padding: 0.3rem;
+    margin: 10px 0;
+}
+#input_message {
+    height: 150px;
+    resize: none;
+}
 .btn-submit {
-    width: 95%;
+    width: 100%;
     height: 2rem;
     border: 1px solid #CCCCCC;
     border-radius: 0.5rem;
@@ -29,37 +67,18 @@
     color: #000000;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-.form-title {
-    font-size: 2rem;
-    padding-bottom: 5rem;
+.btn-submit:hover {
+    cursor: pointer;
+    background-color: #545454;
+    color: #FFFFFF;
 }
 
-.contact-form > div {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-}
-.contact-form > div > input, textarea {
-    width: 100%;
-}
-.contact-form > div > input {
-    height: 30px;
-    border: 1px solid #CCCCCC;
-    border-radius: 0.5rem;
-    margin: 10px 0;
-}
-.contact-form > div > textarea {
-    border: 1px solid #CCCCCC;
-    border-radius: 0.5rem;
-    margin: 10px 0;
-}
-
-label[for="id_subject"] {
-    display: none;
-}
-#id_subject {
-    display: none;
+@media (min-width: 1024px) {
+    .container__division-contact {
+        width: 50%;
+        border: 1px solid red;
+    }
+    .container__division-form-title {
+        margin-left: 3rem;
+    }
 }

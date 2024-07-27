@@ -3,7 +3,7 @@ from .forms import ContactMeForm
 
 from django.conf import settings
 from django.template.loader import get_template
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import EmailMessage
 
 def send_contact_email(data):
     message_body = get_template('homepage/send.html').render(data)
@@ -30,23 +30,21 @@ def contact(request):
 def clients(request):
     return render(request, 'homepage/clients.html', {})
 
-def send_email(request):
+def send_email_view(request):
+
     if request.method == 'POST':
-        form = ContactMeForm(request.POST)
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.save()
+        
+        email = {
+            'name': request.POST.get('name'),
+            'email': request.POST.get('email'),
+            'subject': f'Mensagem de {request.POST.get("name")}',
+            'message': request.POST.get('message')
+        }
 
-            email = {
-                'name': request.POST.get('name'),
-                'email': request.POST.get('email'),
-                'subject': f'Email de {request.POST.get("name")} - {request.POST.get("email")}',
-                'message': request.POST.get('message'),
-            }
-
+        try:
             send_contact_email(email)
-            return redirect('contact')
-    else:
-        form = ContactMeForm()
+            return render(request, 'homepage/contact.html')
+        except Exception as e:
+            HttpResponse(f'Error: {e}', status=500)
 
-    return render(request, 'homepage/contact.html', {'form': form})
+    return render(request, 'homepage/contact.html')
