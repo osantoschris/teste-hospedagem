@@ -205,6 +205,9 @@ body {
     height: 2rem;
     margin: 0 0.4rem;
 }
+.footer__header a {
+    text-decoration: none;
+}
 .footer__header-social img:hover{
     cursor: pointer;
 }
@@ -240,6 +243,9 @@ body {
     .header {
         width: 70%;
     }
+    .header__menu-icon {
+        display: none;
+    }
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -253,8 +259,8 @@ body {
         width: 70%;
         min-height: auto;
     }
-    .header__menu-icon {
-        display: none;
+    .footer {
+        width: 70%;
     }
     .footer__content {
         grid-template-columns: repeat(2, 1fr);
