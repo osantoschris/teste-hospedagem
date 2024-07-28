@@ -237,6 +237,8 @@ body {
     font-size: 0.8rem;
     padding: 1rem 0;
     text-align: center;
+    margin: 0 1rem;
+    text-align: justify;
 }
 
 @media (min-width: 1024px) {
@@ -265,6 +267,9 @@ body {
     .footer__content {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
+    }
+    .footer__information {
+        text-align: center;
     }
 }
 
