@@ -1,18 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from django.urls import reverse
 from django.conf import settings
-from django.template.loader import get_template
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import send_mail
 from django.template.loader import render_to_string
-
-def send_contact_email(data):
-    message_body = get_template('homepage/send.html').render(data)
-    email = EmailMessage(data['subject'], 
-                         message_body,
-                         settings.DEFAULT_FROM_EMAIL, 
-                         to=['christianoliveira8@outlook.com'])
-    email.content_subtype = 'html'
-    return email.send()
 
 def send_email_view(request):
 
@@ -63,9 +53,6 @@ def products(request):
         'redirect_url': reverse('index')
     }
     return render(request, 'homepage/services.html', context)
-
-def contact(request):
-    return render(request, 'homepage/contact.html', {})
 
 def clients(request):
     context = {
