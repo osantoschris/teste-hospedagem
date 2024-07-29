@@ -1,0 +1,31 @@
+.container__division {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 80%;
+    row-gap: 2rem;
+}
+.container__division-title {
+    width: 100%;
+    text-align: left;
+}
+.container__division-title h2 {
+    color: #545454;
+    padding-bottom: 5px;
+}
+.container__division-title h4 {
+    color: #CCCCCC;
+    padding-bottom: 1rem;
+}
+.container__division-product {
+    width: 100%;
+    height: auto;
+    border: 1px solid #CCCCCC;
+    border-radius: 1rem;
+    padding: 15px;
+}
+.container__division-product img {
+    border: 1px solid #545454;
+    border-radius: 1rem;
+    width: 100px;
+    height: 100px;
+}

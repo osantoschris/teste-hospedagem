@@ -7,17 +7,103 @@
 
 <div class="container">
 
+    {% comment %}
     <div class="container__division">
         <h2>Em manutenção...</h2>
         <p>Olá, está página está em manutenção. Logo logo teremos novidades por aqui.</p>
         <p>Por enquanto, que tal navegar pelo nosso site e descobrir um pouco mais sobre nós?</p>
         <p>Você será redirecionado para a página inicial em <span id="countdown">10</span> segundos.</p>
     </div>
+    {% endcomment %}
+
+    <div class="container__division">
+        <section>
+            <h2>Quem Somos</h2>
+            <p>
+                Na osantos webdesigner, nossa paixão é transformar ideias em realidade digital. Fundada com o compromisso de oferecer soluções web de alta qualidade, nossa empresa é um catalisador para a inovação e a excelência no desenvolvimento digital. Somos especializados em desenvolvimento de sites, cartões de visita virtuais, aplicações web (ERP’s, Sistemas de agendamento, entre outros.), serviços de hospedagem e venda de domínios. Com uma abordagem centrada no cliente, trabalhamos incansavelmente para entregar produtos que não apenas atendem, mas superam as expectativas.
+            </p>
+            <p>
+                Acreditamos que o sucesso dos nossos clientes é o nosso sucesso, e é por isso que colocamos a satisfação do cliente no coração de tudo o que fazemos.
+            </p>
+        </section>
+        <section>
+            <h3>Nossa Missão</h3>
+            <p>
+                Nossa missão é empoderar empresas e indivíduos a se destacarem no ambiente digital. Acreditamos no poder da internet para transformar negócios e conectar pessoas, e nos dedicamos a criar soluções que facilitam essa transformação. Queremos ser mais do que um fornecedor de serviços; queremos ser parceiros no sucesso dos nossos clientes.
+            </p>
+            <h3>Nossa Visão</h3>
+            <p>
+                Visualizamos um mundo onde cada empresa, independentemente do seu tamanho, tem a oportunidade de prosperar online. Queremos liderar o caminho na inovação digital, fornecendo soluções que são tanto acessíveis quanto de alta qualidade. A nossa visão é ser a escolha número um para empresas que buscam excelência em sua presença online.
+            </p>
+            <h3>Nossos Valores</h3>
+            <ul>
+                <li>
+                    <b>Inovação:</b> Estamos constantemente explorando novas tecnologias e metodologias para oferecer soluções de ponta aos nossos clientes.
+                </li>
+                <li>
+                    <b>Qualidade:</b> Comprometemo-nos a entregar produtos e serviços que atendem aos mais altos padrões de qualidade.
+                </li>
+                <li>
+                    <b>Transparência:</b> Valorizamos a honestidade e a transparência em todas as nossas interações com clientes e parceiros.
+                </li>
+                <li>
+                    <b>Colaboração:</b> Acreditamos no poder do trabalho em equipe e na colaboração estreita com nossos clientes para alcançar resultados excepcionais.
+                </li>
+                <li>
+                    <b>Excelência no Atendimento:</b> O atendimento ao cliente é uma prioridade para nós. Esforçamo-nos para oferecer um serviço personalizado e responsivo que atenda às necessidades específicas de cada cliente.
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h3>Nosso Processo</h3>
+            <p>
+                Desde o primeiro contato até a entrega final e além, seguimos um processo meticuloso para garantir que cada projeto seja um sucesso:
+            </p>
+            <ol>
+                <li>
+                    <b>Consultoria Inicial:</b> Começamos com uma reunião para entender as necessidades, objetivos e expectativas do cliente.
+                </li>
+                <li>
+                    <b>Planejamento e Estruturação:</b> Elaboramos um plano detalhado e uma estrutura de projeto que serve como um roteiro para o desenvolvimento.
+                </li>
+                <li>
+                    <b>Design e Desenvolvimento:</b> Nossa equipe de design cria visuais impressionantes, enquanto nossos desenvolvedores trazem esses designs à vida com código limpo e eficiente.
+                </li>
+                <li>
+                    <b>Teste e Revisão:</b> Realizamos testes rigorosos para garantir que tudo funcione perfeitamente. Fazemos ajustes conforme necessário para alcançar a perfeição.
+                </li>
+                <li>
+                    <b>Lançamento e Suporte:</b> Após a aprovação final, lançamos o projeto e continuamos a fornecer suporte contínuo para garantir que tudo funcione sem problemas.
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h3>Por que escolher a osantos?</h3>
+            <ul>
+                <li>
+                    <b>Abordagem Personalizada:</b> Cada cliente é único, e nossas soluções são feitas sob medida para atender às suas necessidades específicas.
+                </li>
+                <li>
+                    <b>Tecnologia de Ponta:</b> Utilizamos as mais recentes tecnologias e práticas recomendadas para garantir que nossos clientes estejam sempre à frente.
+                </li>
+                <li>
+                    <b>Compromisso com a Excelência:</b> Não nos contentamos com nada menos do que o melhor. Nosso compromisso com a excelência é evidente em tudo o que fazemos.
+                </li>
+                <li>
+                    <b>Suporte Contínuio:</b> Oferecemos suporte contínuo para garantir que nossos clientes tenham uma experiência tranquila e sem complicações.
+                </li>
+            </ul>
+            <p>
+                Na osantos webdesigner, estamos prontos para levar seu negócio ao próximo nível com soluções digitais inovadoras e eficazes. Estamos ansiosos para colaborar com você e ajudá-lo a alcançar o sucesso online. Junte-se a nós e descubra como podemos transformar sua visão em realidade.
+            </p>
+        </section>
+    </div>
 </div>
 
+{% comment %}
 <script>
     var redirectUrl = "{{ redirect_url }}"
 </script>
 <script src="{% static "homepage/js/countdown.js" %}"></script>
-
+{% endcomment %}
 {% endblock content %}

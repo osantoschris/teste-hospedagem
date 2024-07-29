@@ -124,6 +124,12 @@ body {
     text-decoration: none;
     color: #545454;
 }
+.navbar__link:hover {
+    cursor: pointer;
+    background-color: #545454;
+    color: #FFFFFF;
+    border-radius: 1rem;
+}
 
 .dropdown-menu {
     display: flex;
@@ -134,7 +140,7 @@ body {
     height: 100%;
     background-color: #FFFFFF;
     z-index: 1;
-    transition: 0.8s;
+    transition: 0.5s;
     margin-left: -390px;
 }
 .dropdown-menu ul {
@@ -184,7 +190,7 @@ body {
 }
 
 .footer {
-    width: 100%;
+    width: 95%;
     height: 300px;
     display: flex;
     flex-direction: column;

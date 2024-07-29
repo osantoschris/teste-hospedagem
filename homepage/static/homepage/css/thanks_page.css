@@ -1,0 +1,26 @@
+.container__division {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container__division img {
+    width: 100%;
+    height: 100%;
+}
+.container__division h2 {
+    /* margin-top: 1rem; */
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.container__division p {
+    text-align: justify;
+}
+
+@media (min-width: 1024px) {
+    .container__division img {
+        width: 300px;
+        height: 300px;
+    }
+}

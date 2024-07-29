@@ -1,8 +1,15 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, get_object_or_404
 from django.urls import reverse
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.views.generic.detail import DetailView
+from .models import Product
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'product_detail.html'
+    context_object_name = 'product'
 
 def send_email_view(request):
 
@@ -32,7 +39,7 @@ def send_email_view(request):
                 html_message=message_body
             )
 
-            return render(request, 'homepage/contact.html')
+            return render(request, 'homepage/thanks_page.html')
         except Exception as e:
             return HttpResponse(f'Error: {e}', status=500)
         
@@ -42,17 +49,17 @@ def send_email_view(request):
 def index(request):
     return render(request, 'homepage/index.html', {})
 
+# def about(request):
+#     context = {
+#         'redirect_url': reverse('index')
+#     }
+#     return render(request, 'homepage/about.html', context)
+
 def about(request):
-    context = {
-        'redirect_url': reverse('index')
-    }
-    return render(request, 'homepage/about.html', context)
+    return render(request, 'homepage/about.html')
 
 def products(request):
-    context = {
-        'redirect_url': reverse('index')
-    }
-    return render(request, 'homepage/services.html', context)
+    return render(request, 'homepage/services.html')
 
 def clients(request):
     context = {

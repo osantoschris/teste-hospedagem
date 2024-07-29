@@ -1,0 +1,21 @@
+{% extends "homepage/index.html" %}
+
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static "homepage/css/thanks_page.css" %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<div class="container">
+    <div class="container__division">    
+        <img src="{% static "homepage/img/envelope-open.png" %}" alt="" sizes="" srcset="">
+
+        <h2>Obrigado pelo seu contato!</h2>
+        <p>
+            Agradeçemos a sua solicitação e retornaremos o mais breve possível. Enquanto isso, que tal conhecer um pouco mais sobre nós? Clique <a href="{% url "about" %}">aqui</a> para saber mais sobre a nossa história
+        </p>
+    </div>
+</div>
+
+{% endblock content %}
