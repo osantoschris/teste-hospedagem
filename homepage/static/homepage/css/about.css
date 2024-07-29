@@ -1,0 +1,45 @@
+.container__division {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+}
+.container__division ul {
+    list-style: none;
+}
+.container__division ul li {
+    margin-bottom: 1rem;
+}
+.container__division ol {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+.container__division ol li {
+    margin-bottom: 1rem;
+}
+section {
+    margin-bottom: 2rem;
+}
+h2, h3 {
+    margin: 1rem 0;
+}
+
+@media (min-width:1024px) {
+    .container__division-about-us,
+    .container__division-mission,
+    .container__division-process,
+    .container__division-conclusion {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container__division-about-us h2 {
+        height: 30%;
+    }
+    h3 {
+        height: 30%;
+    }
+}
