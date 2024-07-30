@@ -3,13 +3,7 @@ from django.urls import reverse
 from django.conf import settings
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
-from django.views.generic.detail import DetailView
 from .models import Product
-
-class ProductDetailView(DetailView):
-    model = Product
-    template_name = 'product_detail.html'
-    context_object_name = 'product'
 
 def send_email_view(request):
 
@@ -56,9 +50,16 @@ def products(request):
     products = Product.objects.all()
     return render(request, 'homepage/services.html', {'products': products})
 
-def product_detail(request, pk):
-    product = get_object_or_404(Product, pk=pk)
-    return render(request, 'homepage/product_detail.html', {'product': product})
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    description_chunck = product.description.splitlines()
+    faqs = product.faqs.all()
+    context = {
+        'product': product,
+        'description_chunck': description_chunck,
+        'faqs': faqs,
+    }
+    return render(request, 'homepage/product_detail.html', context)
 
 def clients(request):
     context = {
