@@ -3,11 +3,11 @@
 {% block content %}
 
 <h1>{{ product.name }}</h1>
-<img src="{{ product.image.url }}" alt="{{ product.name }}" srcset="">
+
+<img src="{{ product.image.url}}" alt="{{ product.name }}">
 
 <p>{{ product.description }}</p>
-
-<p>Valor R$: {{ product.price }}</p>
-
+<p>Preço R$: {{ product.price }}</p>
+<a href="{% url "products-services" %}">Voltar</a>
 
 {% endblock content %}

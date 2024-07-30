@@ -41,9 +41,12 @@
     .container__division-products {
         grid-template-columns: repeat(3, 1fr);
     }
+    .container {
+        height: 100vh;
+    }
 }
-@media (min-width: 1440px) {
+/* @media (min-width: 1440px) {
     .container__division-products {
         grid-template-columns: repeat(4, 1fr);
     }
-}
+} */

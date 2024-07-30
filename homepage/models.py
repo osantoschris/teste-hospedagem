@@ -15,3 +15,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def short_description(self):
+        return self.description[:50] + '...' if len(self.description) > 50 else self.description

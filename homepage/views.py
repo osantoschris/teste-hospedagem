@@ -49,17 +49,16 @@ def send_email_view(request):
 def index(request):
     return render(request, 'homepage/index.html', {})
 
-# def about(request):
-#     context = {
-#         'redirect_url': reverse('index')
-#     }
-#     return render(request, 'homepage/about.html', context)
-
 def about(request):
     return render(request, 'homepage/about.html')
 
 def products(request):
-    return render(request, 'homepage/services.html')
+    products = Product.objects.all()
+    return render(request, 'homepage/services.html', {'products': products})
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'homepage/product_detail.html', {'product': product})
 
 def clients(request):
     context = {

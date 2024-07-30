@@ -4,3 +4,4 @@ from django.contrib import admin
 from homepage import models
 
 admin.site.register(models.ContactMe)
+admin.site.register(models.Product)
