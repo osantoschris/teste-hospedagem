@@ -16,13 +16,13 @@
 
         <div class="container__division-products">
                 {% for product in products %}
-                <div class="container__division-product">
-                    <a href="{% url "product_detail" product.pk %}">
-                        <img src="{{ product.image.url }}" alt="{{ product.name}}">
+
+                    <a class="container__division-product ubuntu-regular" href="{% url "product_detail" product.pk %}">
+                        <img src="{{ product.image.url }}" alt="product.name">
+                        <h4>{{ product.name }}</h4>
+                        <p>{{ product.short_description }}</p>
                     </a>
-                    <h4>{{ product.name }}</h4>
-                    <p>{{ product.short_description }}</p>
-                </div>
+
                 {% endfor %}
 
         </div>

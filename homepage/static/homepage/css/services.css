@@ -26,14 +26,25 @@
 .container__division-product {
     width: 100%;
     height: auto;
+    min-height: 200px;
     border: 1px solid #CCCCCC;
     border-radius: 1rem;
     padding: 15px;
+    color: #000000;
+    text-decoration: none;
+    text-align: start;
+    font-size: 0.9rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: transform 0.3s ease-in-out;
+}
+.container__division-product:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
 }
 .container__division-product img {
-    border: 1px solid #545454;
     width: 100px;
     height: 100px;
+    border-radius: 1rem;
 }
 
 @media (min-width: 1024px) {
@@ -41,7 +52,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
     .container {
-        height: 100vh;
+        min-height: 80vh;
     }
 }
 @media (min-width: 1440px) {

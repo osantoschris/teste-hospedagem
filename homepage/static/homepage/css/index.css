@@ -150,6 +150,9 @@
 }
 
 @media (min-width: 1024px) {
+    .container {
+        min-width: 80vh;
+    }
     #clients-avaliation {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

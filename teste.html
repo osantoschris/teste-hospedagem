@@ -1,0 +1,60 @@
+<style>
+    body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div {
+        width: 50%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+    }
+    .desenho {
+        border: 1px solid red;
+        transform: rotate(-45deg);
+    }
+</style>
+
+<div>
+    <svg class="desenho" width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+        <polyline points="
+            30,30 70,50
+            30,70 30,30
+        "
+        stroke="#000000"
+        fill="none"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+
+        <polyline
+        points="
+            30,50 70,50
+        "
+        stroke="#000000"
+        fill="none"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="rount"
+        />
+
+        <polyline
+        points="
+            30,40 20,50
+            30,60 30,40
+
+        "
+        stroke="#000000"
+        fill="none"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="rount"
+        />
+    </svg>
+</div>

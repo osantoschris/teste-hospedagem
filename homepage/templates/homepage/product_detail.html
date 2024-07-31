@@ -29,43 +29,97 @@
     </div>
     <div class="container__division">
 
-        <img src="{{ product.image.url}}" alt="{{ product.name }}">
-        <h2>{{ product.name }}</h2>
-        <span class="product-price">
-            <h4>R$ {{ product.price }}</h4>
-            <span>
-                {% if product.payment == 'anual' %}
-                    <p>/ano</p>
-                {% elif product.payment == 'mensal'%}
-                    <p>/mês</p>
-                {% endif %}
-            </span>
-        </span>
-        
-        {% for chunck in description_chunck %}
-            <p>{{ chunck }}</p>
-        {% endfor %}
+        <div class="container__division-image">
+            <img src="{{ product.image.url}}" alt="{{ product.name }}">
+        </div>
 
-        {% if product.faqs %}
-            {% for faq in faqs %}
-            <details class="questions">
-                <summary>
-                    {{ faq.question }} 
-                    <div class="question__arrow">
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                            <polyline points="25,10 75,50 25,90"
-                            stroke-width="5"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            fill="none"
-                            stroke="#000000"></polyline>
-                        </svg>
-                    </div>
-                </summary>
-                <p>{{ faq.answer }}</p>
-            </details>
+        <div class="container__division-content">
+
+            <h2>{{ product.name }}</h2>
+            <p class="start-price">a partir de:</p>
+            <span class="product-price">
+
+                {% if product.price == 0 %}
+                    <h4 style="font-size: 40px">R$ A combinar</h4>
+                {% else %}
+                    <h4>R$ {{ product.price }}</h4>
+                {% endif %}
+                <span>
+                    {% if product.payment == 'anual' %}
+                        <p>/ano</p>
+                    {% elif product.payment == 'mensal'%}
+                        <p>/mês</p>
+                    {% endif %}
+                </span>
+            </span>
+            
+            {% for chunck in description_chunck %}
+                <p>{{ chunck }}</p>
             {% endfor %}
-        {% endif %}
+
+            <div class="product-message">
+                {% comment %} <p>Enviar Solicitação</p> {% endcomment %}
+                Enviar Solicitação
+                <svg class="desenho" width="200" height="200" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+                    <polyline points="
+                        30,30 70,50
+                        30,70 30,30
+                    "
+                    stroke="#FFFFFF"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+            
+                    <polyline
+                    points="
+                        30,50 70,50
+                    "
+                    stroke="#FFFFFF"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="rount"
+                    />
+            
+                    <polyline
+                    points="
+                        30,40 20,50
+                        30,60 30,40
+            
+                    "
+                    stroke="#FFFFFF"
+                    fill="none"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="rount"
+                    />
+                </svg>
+            </div>
+
+            {% if product.faqs %}
+                {% for faq in faqs %}
+                <details class="questions">
+                    <summary>
+                        {{ faq.question }} 
+                        <div class="question__arrow">
+                            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="25,10 75,50 25,90"
+                                stroke-width="5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                fill="none"
+                                stroke="#000000"></polyline>
+                            </svg>
+                        </div>
+                    </summary>
+                    <p>{{ faq.answer }}</p>
+                </details>
+                {% endfor %}
+            {% endif %}
+
+        </div>
 
     </div>
 
